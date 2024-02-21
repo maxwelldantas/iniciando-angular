@@ -7,13 +7,21 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let employee of employees">
+    <tr *ngFor="let employee of employees; let i = index" [id]="'tr' + i">
       <!-- pode ser feito desta forma -->
       <!-- <td>{{ employee.name }}</td> -->
       <!-- <td>{{ employee.salary }}</td> -->
       <!-- ou desta outra forma -->
       <td [innerHTML]="employee.name"></td>
-      <td [innerHTML]="employee.salary"></td>
+      <!-- <td
+        [innerHTML]="employee.salary"
+        [style.color]="getSalaryColor(employee)"
+      ></td> -->
+      <!-- Outra possibiliadade usando o ngClass para usar lógica e alterar a cor do salário -->
+      <td
+        [innerHTML]="employee.salary"
+        [ngClass]="getSalaryColorClass(employee)"
+      ></td>
     </tr>
   </tbody>
 </table>

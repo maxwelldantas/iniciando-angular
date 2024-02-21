@@ -11,4 +11,21 @@ import { CommonModule } from '@angular/common';
 })
 export class EmployeeListComponent {
   employees = employees;
+
+  getSalaryColor(employee: any) {
+    if (employee.salary >= 8000) {
+      return 'green';
+    } else if (employee.salary < 1412) {
+      return 'red';
+    } else {
+      return null;
+    }
+  }
+
+  getSalaryColorClass(employee: any) {
+    return {
+      'salary-expensive': employee.salary >= 8000,
+      'salary-cheap': employee.salary <= 1000,
+    };
+  }
 }
