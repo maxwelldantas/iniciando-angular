@@ -1,0 +1,19 @@
+<p>Listagem dos empregados(as)</p>
+<table aria-describedby="Tabela empregados">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Salário</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employees">
+      <!-- pode ser feito desta forma -->
+      <!-- <td>{{ employee.name }}</td> -->
+      <!-- <td>{{ employee.salary }}</td> -->
+      <!-- ou desta outra forma -->
+      <td [innerHTML]="employee.name"></td>
+      <td [innerHTML]="employee.salary"></td>
+    </tr>
+  </tbody>
+</table>

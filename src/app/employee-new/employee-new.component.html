@@ -1,0 +1,15 @@
+<label>Nome</label> <input type="text" [(ngModel)]="name" /><br />
+<label>Salário</label> <input type="number" [(ngModel)]="salary" /><br />
+<button type="button" (click)="addEmployee($event)">Adicionar empregado</button>
+
+<!--
+
+Interpolação (Interpolation): {{ name }}
+
+Fluxo:
+
+    Template -> Componente usar: () Event Binding (Vinculação de Evento)
+    Componente -> Template usar: [] Property Binding (Vinculação de Propriedade)
+    [(ngModel)]="name" -> a diretiva ngModel é Two-Way Data Binding (Vinculação Bidirecional)
+
+-->
