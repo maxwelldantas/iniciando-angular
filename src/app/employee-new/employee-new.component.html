@@ -1,5 +1,16 @@
-<label>Nome</label> <input type="text" [(ngModel)]="name" /><br />
-<label>Salário</label> <input type="number" [(ngModel)]="salary" /><br />
+<label>Nome</label> <input type="text" [(ngModel)]="employee.name" /><br />
+<label>Salário</label>
+<input type="number" [(ngModel)]="employee.salary" /><br />
+<div *ngIf="employee.salary < 1000">
+  <label>Bônus</label>
+  <input type="number" [(ngModel)]="employee.bonus" /><br />
+</div>
+<!-- <div [hidden]="employee.salary >= 1000">
+    hidden coloca o display: none já com *ngIf ele destrói o elemento 
+    hidden demanda menor processamento para poder esconder, diferente do *ngIf
+  <label>Bônus</label>
+  <input type="number" [(ngModel)]="employee.bonus" /><br />
+</div> -->
 <button type="button" (click)="addEmployee($event)">Adicionar empregado</button>
 
 <!--

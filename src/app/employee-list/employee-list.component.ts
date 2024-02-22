@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import employees from '../employess';
+import { EmployeeService } from '../service/employee.service';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -10,7 +10,9 @@ import { CommonModule } from '@angular/common';
   styleUrl: './employee-list.component.css',
 })
 export class EmployeeListComponent {
-  employees = employees;
+  // employees = employees;
+
+  constructor(public employeeService: EmployeeService) {}
 
   getSalaryColor(employee: any) {
     if (employee.salary >= 8000) {
